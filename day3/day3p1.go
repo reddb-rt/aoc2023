@@ -29,7 +29,7 @@ func getLines(file *os.File) []string {
 func adjacentSymbol(engine [][]string, i int, j int) bool {
 	rows := len(engine)
 	cols := len(engine[0])
-	
+
 	// left, i, j-1
 	if j-1 >= 0 {
 		if reSymbol.MatchString(engine[i][j-1]) {

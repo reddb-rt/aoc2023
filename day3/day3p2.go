@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 	"regexp"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 var reGear = regexp.MustCompile("\\*")
@@ -36,7 +36,7 @@ func partNumIdxs(matrix *[][]string, i int, j int, rowLength int) (int, int, int
 		}
 		l -= 1
 	}
-	for r < rowLength - 1 {
+	for r < rowLength-1 {
 		rNext := engine[i][r+1]
 		if !reDigit.MatchString(rNext) {
 			break
@@ -46,7 +46,7 @@ func partNumIdxs(matrix *[][]string, i int, j int, rowLength int) (int, int, int
 	return i, l, r
 }
 
-func gearRatio(matrix *[][]string, i int, j int, rowLength int) (int) {
+func gearRatio(matrix *[][]string, i int, j int, rowLength int) int {
 	engine := *matrix
 	partOne, partTwo := findAdjacentParts(&engine, i, j, rowLength)
 	return partOne * partTwo
@@ -56,14 +56,14 @@ func findAdjacentParts(matrix *[][]string, i int, j int, rowLength int) (int, in
 	engine := *matrix
 	var partIdxs []int
 	var adjacencies = [8][2]int{
-		{i, j-1},
-		{i, j+1},
-		{i-1, j-1},
-		{i-1, j},
-		{i-1, j+1},
-		{i+1, j+1},
-		{i+1, j},
-		{i+1, j-1},
+		{i, j - 1},
+		{i, j + 1},
+		{i - 1, j - 1},
+		{i - 1, j},
+		{i - 1, j + 1},
+		{i + 1, j + 1},
+		{i + 1, j},
+		{i + 1, j - 1},
 	}
 
 	for p := 0; p < 8; p++ {
