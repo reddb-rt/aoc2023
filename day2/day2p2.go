@@ -28,7 +28,7 @@ func main() {
 		// [red, green, blue]
 		var cubeMax [3]int
 		parts := re.FindAllString(scanner.Text(), -1)
-		for i := 2; i < len(parts); i+=2 {
+		for i := 2; i < len(parts); i += 2 {
 			val, err := strconv.Atoi(parts[i-1])
 			if err != nil {
 				log.Fatal(err)
@@ -41,4 +41,3 @@ func main() {
 	}
 	fmt.Println(sumPowers)
 }
-

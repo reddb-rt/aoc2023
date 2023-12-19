@@ -61,18 +61,18 @@ func main() {
 			}
 
 			var wins int
-			for i := range numbers {	
+			for i := range numbers {
 				if intInSlice(numbers[i], winningNumbers) {
 					wins += 1
 				}
 			}
 			// Since score is doubled, everything after 2 is equiv to 2^(wins-1)
 			if wins > 2 {
-				score += int(math.Pow(2, float64(wins - 1)))
+				score += int(math.Pow(2, float64(wins-1)))
 			} else {
 				score += wins
 			}
 		}
 	}
 	fmt.Println(score)
-}	
+}

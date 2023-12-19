@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"unicode"
 	"strconv"
+	"unicode"
 )
 
 func main() {
@@ -19,8 +19,8 @@ func main() {
 }
 
 func getValue(line string) int {
-	l, r := 0, len(line) - 1
-	var l_val, r_val rune 
+	l, r := 0, len(line)-1
+	var l_val, r_val rune
 	for {
 		if unicode.IsDigit(rune(line[l])) {
 			l_val = rune(line[l])

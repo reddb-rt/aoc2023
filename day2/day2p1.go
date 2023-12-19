@@ -25,14 +25,14 @@ func main() {
 	scanner := bufio.NewScanner(file)
 
 	var sum int
-	Lines:
+Lines:
 	for scanner.Scan() {
 		parts := re.FindAllString(scanner.Text(), -1)
 		gameNum, err := strconv.Atoi(parts[0])
 		if err != nil {
 			log.Fatal(err)
 		}
-		for i := 2; i < len(parts); i+=2 {
+		for i := 2; i < len(parts); i += 2 {
 			val, err := strconv.Atoi(parts[i-1])
 			if err != nil {
 				log.Fatal(err)
@@ -45,4 +45,3 @@ func main() {
 	}
 	fmt.Println(sum)
 }
-
